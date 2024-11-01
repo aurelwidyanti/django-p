@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Statistics</title>
+</head>
+<body>
+    <h1>User Statistics</h1>
+    <p>Jumlah user yang membuat course: {{ total_users_with_course }}</p>
+    <p>Jumlah user yang tidak memiliki course: {{ total_users_without_course }}</p>
+    <p>Rata-rata jumlah course yang diikuti per user: {{ average_courses_per_user }}</p>
+    <p>User yang mengikuti course terbanyak: {{ top_user.username }} ({{ top_user_course_count }} courses)</p>
+    <h2>List User yang Tidak Mengikuti Course Sama Sekali</h2>
+    <ul>
+        {% for user in users_without_courses %}
+            <li>{{ user.username }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
